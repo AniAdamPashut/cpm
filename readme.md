@@ -25,13 +25,13 @@ these were generated with `cargo run -- cpp -l cpp` and `cargo run -- cpp_empty 
 **this is inside a folder which is given as the first argument to the cli with lang set as c (just like the c folder example)**
 ```
 build/
-	libs/
-		headers/
-		objs/
-	objs/
+    libs/
+        headers/
+        objs/
+    objs/
 headers/
 src/
-	main.c
+    main.c
 .gitignore
 cpi.toml
 makefile
