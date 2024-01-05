@@ -4,6 +4,8 @@
 
 # Examples
 
+### The examples are inside the `examples` folder
+
 ## Using the C language
 
 examples found in the folders `c` and `c_empty` <br>
