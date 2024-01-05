@@ -1,0 +1,6 @@
+[package]
+name = "c_empty"
+version = "0.1.0"
+author = "you"
+
+dependencies = []
