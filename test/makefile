@@ -1,7 +1,7 @@
 .SUFFIXES:
-CC = g++ -std=c++20
+CC = gcc
 SRC = ./src
-LANG = cpp
+LANG = c
 MAIN_EXEC = test
 BUILD = ./build
 CFLAGS = -Iheaders -I$(BUILD)/libs/headers -fPIC

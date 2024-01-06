@@ -52,7 +52,7 @@ dependencies = []
 
             README => {
                 file.write(format!(
-"# {}", project_name
+					"# {}", project_name
                 ).as_bytes())?;
             }
 
@@ -60,7 +60,7 @@ dependencies = []
                 let compiler = match lang {
                     "c" => "gcc",
                     "cpp" => "g++ -std=c++20",
-                    _ => unimplemented!()
+                    _ => unreachable!()
                 };
                 file.write(
                     format!(

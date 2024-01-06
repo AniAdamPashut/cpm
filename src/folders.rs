@@ -16,7 +16,6 @@ impl Folders {
     fn create_folder(parent: &Path, folder: &str) -> std::io::Result<()> {
         let mut path = parent.to_owned();
         path.push(folder);
-        println!("{}", path.as_os_str().to_str().unwrap());
         fs::create_dir(path)?;
         Ok(())
     }

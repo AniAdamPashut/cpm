@@ -50,21 +50,6 @@ struct Args {
 
 fn main() -> std::io::Result<()> {
     let args = Args::parse();
-
-    println!("Empty flag is {:?}", args.empty);
-    match args.lang.as_str() {
-        "c" => {
-            println!("Creating a C Project");
-        }
-        "cpp" => {
-            println!("Creating a C++ Project");
-        }
-        _ => {
-            println!("Invalid language: {}", args.lang.as_str());
-            return Ok(());
-        }
-    }
-
     let project_name = args.project_name;
     let mut root = PathBuf::from("./");
     root.push(project_name);
@@ -75,9 +60,7 @@ fn main() -> std::io::Result<()> {
     fs::create_dir(&root)?;
     
     Folders::create_all_folders(&root)?;
-    println!("Folders are done");
     Files::create_all_files(&root, &args.lang)?;
-    println!("Created all files");
 
     if !args.empty {
         let filename = PathBuf::from(format!("{}/{}.{}", root.to_str().unwrap(), MAIN, &args.lang));
@@ -95,9 +78,7 @@ fn main() -> std::io::Result<()> {
                 file.write(MAIN_CPP_CONTENT.as_bytes())?;
             }
 
-            _ => {
-                println!("Invalid Language");
-            }
+            _ => unreachable!()
         }
     }
     Ok(())
