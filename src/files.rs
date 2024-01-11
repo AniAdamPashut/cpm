@@ -70,7 +70,9 @@ SRC = ./src
 LANG = {}
 MAIN_EXEC = {}
 BUILD = ./build
-CFLAGS = -Iheaders -I$(BUILD)/libs/headers -fPIC
+SUB_HEADER_DIRS = $(shell find headers -type d)
+HEADER_PREFIX = -I
+CFLAGS = -I$(BUILD)/libs/headers $(addprefix $(HEADER_PREFIX), $(SUB_HEADER_DIRS)) -fPIC
 LIBS = $(wildcard $(BUILD)/libs/objs/*.so)
 SUBDIRS = $(shell find $(SRC) -type d)
 FILES = $(wildcard $(addsuffix /*.$(LANG),$(SUBDIRS)))
@@ -106,7 +108,8 @@ init:
 	@mkdir -p $(BUILD)/libs/objs
 	@mkdir -p $(BUILD)/objs
 
-.PHONY: all clean lib release debug init"#, 
+.PHONY: all clean lib release debug init"#,
+
 compiler, 
 lang, 
 project_name).as_bytes()
