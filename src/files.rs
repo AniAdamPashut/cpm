@@ -99,7 +99,7 @@ $(MAIN_EXEC).so: $(ALL_OBJS)
 	$(CC) $(CFLAGS) $(ALL_OBJS) -shared -o $@
 
 clean:
-	rm -rf $(OBJS) $(MAIN_EXEC)
+	rm -rf $(OBJS) $(MAIN_EXEC) $(MAIN_EXEC).so
 
 init:
 	@mkdir -p $(BUILD)/libs/headers

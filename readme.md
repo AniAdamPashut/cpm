@@ -2,6 +2,14 @@
 > A simple cli utility to create projects in C
 
 
+# Makefile
+
+- comes pre-configured to have debug mode with `make debug`
+- also has `make release` which uses `-O3` optimization (you can change the level manually)
+- also has `make lib` for quick `.so` generation
+- and has `make init` if you cloned it from github and `build/` directories are missing
+- `make clean` cleans some space
+
 # Examples
 
 ### The examples are inside the `examples` folder
