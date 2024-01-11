@@ -101,7 +101,12 @@ $(MAIN_EXEC).so: $(ALL_OBJS)
 clean:
 	rm -rf $(OBJS) $(MAIN_EXEC)
 
-.PHONY: all clean lib release debug"#, 
+init:
+	@mkdir -p $(BUILD)/libs/headers
+	@mkdir -p $(BUILD)/libs/objs
+	@mkdir -p $(BUILD)/objs
+
+.PHONY: all clean lib release debug init"#, 
 compiler, 
 lang, 
 project_name).as_bytes()
